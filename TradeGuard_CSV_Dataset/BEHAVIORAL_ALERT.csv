@@ -1,0 +1,97 @@
+alert_id,trade_id,rule_id,pattern_type,severity,message,detected_at,acknowledged
+AL0001,TR0136,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-29 15:55:00,False
+AL0002,TR0986,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 07:46:00,False
+AL0003,TR1871,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 23:45:00,False
+AL0004,TR1473,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 05:37:00,False
+AL0005,TR0290,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-29 23:49:00,False
+AL0006,TR1146,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 15:42:00,False
+AL0007,TR2034,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-03 07:40:00,False
+AL0008,TR0871,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 01:41:00,False
+AL0009,TR1754,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 17:54:00,False
+AL0010,TR0040,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-29 11:52:00,False
+AL0011,TR0907,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 03:52:00,False
+AL0012,TR1791,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 19:37:00,False
+AL0013,TR0323,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 01:35:00,False
+AL0014,TR1199,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 17:47:00,False
+AL0015,TR2074,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-03 09:53:00,False
+AL0016,TR0455,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 07:38:00,False
+AL0017,TR1330,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 23:37:00,False
+AL0018,TR0407,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 05:39:00,False
+AL0019,TR1296,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 21:44:00,False
+AL0020,TR2157,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-03 13:43:00,False
+AL0021,TR0364,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 03:38:00,False
+AL0022,TR1240,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 19:35:00,False
+AL0023,TR2116,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-03 11:46:00,False
+AL0024,TR0826,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 23:45:00,False
+AL0025,TR0497,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 09:45:00,False
+AL0026,TR1394,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 01:48:00,False
+AL0027,TR0721,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 19:42:00,False
+AL0028,TR1613,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 11:42:00,False
+AL0029,TR0207,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-29 19:36:00,False
+AL0030,TR1070,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 11:46:00,False
+AL0031,TR0244,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-29 21:55:00,False
+AL0032,TR1110,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 13:49:00,False
+AL0033,TR1999,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-03 05:50:00,False
+AL0034,TR0785,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 21:51:00,False
+AL0035,TR1659,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 13:53:00,False
+AL0036,TR0542,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 11:40:00,False
+AL0037,TR1426,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 03:46:00,False
+AL0038,TR0170,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-29 17:50:00,False
+AL0039,TR1032,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 09:43:00,False
+AL0040,TR1918,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-03 01:53:00,False
+AL0041,TR0678,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-30 17:42:00,False
+AL0042,TR1566,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 09:46:00,False
+AL0043,TR0085,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-09-29 13:40:00,False
+AL0044,TR0951,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-01 05:49:00,False
+AL0045,TR1830,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 21:50:00,False
+AL0046,TR1520,R001,REVENGE_TRADING,HIGH,New trade detected within 30 minutes after a loss on the trader's previous trade.,2026-10-02 07:44:00,False
+AL0047,TR0022,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-29 10:30:00,False
+AL0048,TR0080,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-29 13:30:00,False
+AL0049,TR0146,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-29 16:30:00,False
+AL0050,TR0203,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-29 19:30:00,False
+AL0051,TR0257,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-29 22:30:00,False
+AL0052,TR0322,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 01:30:00,False
+AL0053,TR0379,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 04:30:00,False
+AL0054,TR0451,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 07:30:00,False
+AL0055,TR0514,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 10:30:00,False
+AL0056,TR0583,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 13:30:00,False
+AL0057,TR0653,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 16:30:00,False
+AL0058,TR0715,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 19:30:00,False
+AL0059,TR0797,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-09-30 22:30:00,False
+AL0060,TR0867,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 01:30:00,False
+AL0061,TR0925,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 04:30:00,False
+AL0062,TR0984,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 07:30:00,False
+AL0063,TR1047,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 10:30:00,False
+AL0064,TR1104,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 13:30:00,False
+AL0065,TR1164,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 16:30:00,False
+AL0066,TR1237,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 19:30:00,False
+AL0067,TR1312,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-01 22:30:00,False
+AL0068,TR1380,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 01:30:00,False
+AL0069,TR1447,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 04:30:00,False
+AL0070,TR1516,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 07:30:00,False
+AL0071,TR1583,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 10:30:00,False
+AL0072,TR1652,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 13:30:00,False
+AL0073,TR1717,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 16:30:00,False
+AL0074,TR1789,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 19:30:00,False
+AL0075,TR1848,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-02 22:30:00,False
+AL0076,TR1913,R002,OVER_LEVERAGING,CRITICAL,Trade leverage ratio exceeded the configured maximum leverage ratio of 3.0.,2026-10-03 01:30:00,False
+AL0077,TR0079,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-29 13:30:00,False
+AL0078,TR0127,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-29 15:30:00,False
+AL0079,TR0167,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-29 17:30:00,False
+AL0080,TR0204,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-29 19:30:00,False
+AL0081,TR0241,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-29 21:30:00,False
+AL0082,TR0285,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-29 23:30:00,False
+AL0083,TR0320,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 01:30:00,False
+AL0084,TR0361,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 03:30:00,False
+AL0085,TR0402,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 05:30:00,False
+AL0086,TR0449,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 07:30:00,False
+AL0087,TR0493,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 09:30:00,False
+AL0088,TR0535,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 11:30:00,False
+AL0089,TR0581,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 13:30:00,False
+AL0090,TR0626,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 15:30:00,False
+AL0091,TR0671,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 17:30:00,False
+AL0092,TR0716,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 19:30:00,False
+AL0093,TR0778,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 21:30:00,False
+AL0094,TR0817,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-09-30 23:30:00,False
+AL0095,TR0863,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-10-01 01:30:00,False
+AL0096,TR0897,R003,CONCENTRATION,HIGH,Holding concentration exceeded the configured 60% portfolio threshold.,2026-10-01 03:30:00,False

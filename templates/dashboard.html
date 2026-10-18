@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Trader dashboard</h2>
+{% if portfolio %}
+<div class="cards">
+<div class="panel"><span>Cash balance</span><strong>{{ "%.2f"|format(portfolio.cash_balance) }}</strong></div>
+<div class="panel"><span>Portfolio value</span><strong>{{ "%.2f"|format(portfolio.total_value) }}</strong></div>
+</div>
+<h3>Holdings</h3>
+<table><thead><tr><th>Stock</th><th>Quantity</th><th>Average buy price</th><th>Current price</th><th>Market value</th></tr></thead><tbody>
+{% for h in holdings %}<tr><td>{{ h.ticker_symbol }}</td><td>{{ h.quantity }}</td><td>{{ h.avg_buy_price }}</td><td>{{ h.current_price }}</td><td>{{ h.market_value }}</td></tr>{% else %}<tr><td colspan="5">No holdings yet.</td></tr>{% endfor %}
+</tbody></table>
+{% else %}<p>No portfolio is linked to this account.</p>{% endif %}
+{% endblock %}

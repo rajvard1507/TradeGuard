@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TradeGuard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header><h1>TradeGuard</h1>
+  {% if session.get('role') == 'trader' %}
+  <nav><a href="{{ url_for('trader.dashboard') }}">Dashboard</a><a href="{{ url_for('trader.place_trade') }}">Place trade</a><a href="{{ url_for('trader.alerts') }}">Alerts</a><a href="{{ url_for('auth.logout') }}">Logout</a></nav>
+  {% elif session.get('role') == 'admin' %}
+  <nav><a href="{{ url_for('admin.queue') }}">Alert queue</a><a href="{{ url_for('auth.logout') }}">Logout</a></nav>
+  {% endif %}
+</header>
+<main>
+  {% for category, message in get_flashed_messages(with_categories=true) %}
+    <div class="flash {{ category }}">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>

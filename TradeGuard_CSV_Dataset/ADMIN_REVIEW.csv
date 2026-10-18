@@ -1,0 +1,49 @@
+review_id,admin_id,alert_id,notes,action_taken,reviewed_at
+RV0001,A001,AL0001,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:00:00
+RV0003,A002,AL0003,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:02:00
+RV0005,A001,AL0005,Reviewed revenge trading alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:04:00
+RV0007,A002,AL0007,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:06:00
+RV0009,A001,AL0009,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:08:00
+RV0011,A002,AL0011,Reviewed revenge trading alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:10:00
+RV0013,A001,AL0013,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:12:00
+RV0015,A002,AL0015,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:14:00
+RV0017,A001,AL0017,Reviewed revenge trading alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:16:00
+RV0019,A002,AL0019,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:18:00
+RV0021,A001,AL0021,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:20:00
+RV0023,A002,AL0023,Reviewed revenge trading alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:22:00
+RV0025,A001,AL0025,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:24:00
+RV0027,A002,AL0027,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:26:00
+RV0029,A001,AL0029,Reviewed revenge trading alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:28:00
+RV0031,A002,AL0031,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:30:00
+RV0033,A001,AL0033,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:32:00
+RV0035,A002,AL0035,Reviewed revenge trading alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:34:00
+RV0037,A001,AL0037,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:36:00
+RV0039,A002,AL0039,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:38:00
+RV0041,A001,AL0041,Reviewed revenge trading alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:40:00
+RV0043,A002,AL0043,Reviewed revenge trading alert and recorded risk assessment.,MONITORED,2026-10-05 16:42:00
+RV0045,A001,AL0045,Reviewed revenge trading alert and recorded risk assessment.,ESCALATED,2026-10-05 16:44:00
+RV0047,A002,AL0047,Reviewed over leveraging alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:46:00
+RV0049,A001,AL0049,Reviewed over leveraging alert and recorded risk assessment.,MONITORED,2026-10-05 16:48:00
+RV0051,A002,AL0051,Reviewed over leveraging alert and recorded risk assessment.,ESCALATED,2026-10-05 16:50:00
+RV0053,A001,AL0053,Reviewed over leveraging alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:52:00
+RV0055,A002,AL0055,Reviewed over leveraging alert and recorded risk assessment.,MONITORED,2026-10-05 16:54:00
+RV0057,A001,AL0057,Reviewed over leveraging alert and recorded risk assessment.,ESCALATED,2026-10-05 16:56:00
+RV0059,A002,AL0059,Reviewed over leveraging alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:58:00
+RV0061,A001,AL0061,Reviewed over leveraging alert and recorded risk assessment.,MONITORED,2026-10-05 16:00:00
+RV0063,A002,AL0063,Reviewed over leveraging alert and recorded risk assessment.,ESCALATED,2026-10-05 16:02:00
+RV0065,A001,AL0065,Reviewed over leveraging alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:04:00
+RV0067,A002,AL0067,Reviewed over leveraging alert and recorded risk assessment.,MONITORED,2026-10-05 16:06:00
+RV0069,A001,AL0069,Reviewed over leveraging alert and recorded risk assessment.,ESCALATED,2026-10-05 16:08:00
+RV0071,A002,AL0071,Reviewed over leveraging alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:10:00
+RV0073,A001,AL0073,Reviewed over leveraging alert and recorded risk assessment.,MONITORED,2026-10-05 16:12:00
+RV0075,A002,AL0075,Reviewed over leveraging alert and recorded risk assessment.,ESCALATED,2026-10-05 16:14:00
+RV0077,A001,AL0077,Reviewed concentration alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:16:00
+RV0079,A002,AL0079,Reviewed concentration alert and recorded risk assessment.,MONITORED,2026-10-05 16:18:00
+RV0081,A001,AL0081,Reviewed concentration alert and recorded risk assessment.,ESCALATED,2026-10-05 16:20:00
+RV0083,A002,AL0083,Reviewed concentration alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:22:00
+RV0085,A001,AL0085,Reviewed concentration alert and recorded risk assessment.,MONITORED,2026-10-05 16:24:00
+RV0087,A002,AL0087,Reviewed concentration alert and recorded risk assessment.,ESCALATED,2026-10-05 16:26:00
+RV0089,A001,AL0089,Reviewed concentration alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:28:00
+RV0091,A002,AL0091,Reviewed concentration alert and recorded risk assessment.,MONITORED,2026-10-05 16:30:00
+RV0093,A001,AL0093,Reviewed concentration alert and recorded risk assessment.,ESCALATED,2026-10-05 16:32:00
+RV0095,A002,AL0095,Reviewed concentration alert and recorded risk assessment.,WARNING ISSUED,2026-10-05 16:34:00

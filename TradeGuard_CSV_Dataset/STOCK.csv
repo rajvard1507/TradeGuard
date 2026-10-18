@@ -1,0 +1,21 @@
+stock_id,ticker_symbol,company_name,sector,current_price,last_updated
+S001,AAPL,Apple Inc.,Technology,180.0,2026-10-05 15:30:00
+S002,MSFT,Microsoft Corp.,Technology,510.0,2026-10-05 15:30:00
+S003,NVDA,NVIDIA Corp.,Technology,185.0,2026-10-05 15:30:00
+S004,AMZN,Amazon.com Inc.,Consumer,220.0,2026-10-05 15:30:00
+S005,GOOGL,Alphabet Inc.,Technology,245.0,2026-10-05 15:30:00
+S006,TSLA,Tesla Inc.,Automotive,450.0,2026-10-05 15:30:00
+S007,META,Meta Platforms,Technology,760.0,2026-10-05 15:30:00
+S008,JPM,JPMorgan Chase,Financials,310.0,2026-10-05 15:30:00
+S009,V,Visa Inc.,Financials,350.0,2026-10-05 15:30:00
+S010,JNJ,Johnson & Johnson,Healthcare,205.0,2026-10-05 15:30:00
+S011,XOM,Exxon Mobil,Energy,125.0,2026-10-05 15:30:00
+S012,WMT,Walmart Inc.,Consumer,105.0,2026-10-05 15:30:00
+S013,NFLX,Netflix Inc.,Entertainment,1250.0,2026-10-05 15:30:00
+S014,AMD,Advanced Micro Devices,Technology,175.0,2026-10-05 15:30:00
+S015,KO,Coca-Cola Co.,Consumer,80.0,2026-10-05 15:30:00
+S016,PEP,PepsiCo Inc.,Consumer,150.0,2026-10-05 15:30:00
+S017,ORCL,Oracle Corp.,Technology,280.0,2026-10-05 15:30:00
+S018,BAC,Bank of America,Financials,55.0,2026-10-05 15:30:00
+S019,DIS,Walt Disney Co.,Entertainment,115.0,2026-10-05 15:30:00
+S020,COST,Costco Wholesale,Consumer,980.0,2026-10-05 15:30:00

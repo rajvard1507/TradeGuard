@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+<h2>Review alert</h2>
+<p><strong>{{ alert.pattern_type }} — {{ alert.severity }}</strong></p>
+<p>{{ alert.message }}</p>
+<form method="post">
+<label>Notes<textarea name="notes" rows="5"></textarea></label>
+<label>Action taken<input name="action_taken"></label>
+<button type="submit">Save review</button>
+</form>
+</section>
+{% endblock %}

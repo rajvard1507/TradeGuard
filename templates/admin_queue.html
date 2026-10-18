@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Administrator alert queue</h2>
+<table><thead><tr><th>Time</th><th>Trader</th><th>Stock</th><th>Pattern</th><th>Severity</th><th>Explanation</th><th>Review</th></tr></thead><tbody>
+{% for a in alerts %}<tr><td>{{ a.detected_at }}</td><td>{{ a.trader_name }}</td><td>{{ a.ticker_symbol }}</td><td>{{ a.pattern_type }}</td><td>{{ a.severity }}</td><td>{{ a.message }}</td><td><a href="{{ url_for('admin.review', alert_id=a.alert_id) }}">{{ "Edit review" if a.review_id else "Review" }}</a></td></tr>
+{% else %}<tr><td colspan="7">No alerts found.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

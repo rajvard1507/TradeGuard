@@ -1,0 +1,3 @@
+-- Your database tables already exist.
+-- Do not run a replacement CREATE TABLE script over the existing database.
+-- This file is kept as a record/placeholder for the existing schema.

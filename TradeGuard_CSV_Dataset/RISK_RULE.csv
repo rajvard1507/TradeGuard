@@ -1,0 +1,4 @@
+rule_id,pattern_type,parameter_name,threshold_value,description,is_active
+R001,REVENGE_TRADING,time_window_minutes,30.0,Flag a new trade within the configured time window after a realized loss.,true
+R002,OVER_LEVERAGING,max_leverage_ratio,3.0,Flag a trade whose leverage ratio exceeds the configured threshold.,true
+R003,CONCENTRATION,max_portfolio_percentage,60.0,Flag a holding whose value exceeds the configured percentage of portfolio value.,true

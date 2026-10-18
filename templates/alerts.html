@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Behavioral alerts</h2>
+<table><thead><tr><th>Time</th><th>Stock</th><th>Pattern</th><th>Severity</th><th>Explanation</th><th>Status</th><th>Action</th></tr></thead><tbody>
+{% for a in alerts %}<tr><td>{{ a.detected_at }}</td><td>{{ a.ticker_symbol }}</td><td>{{ a.pattern_type }}</td><td>{{ a.severity }}</td><td>{{ a.message }}</td><td>{{ "Acknowledged" if a.acknowledged else "New" }}</td><td>{% if not a.acknowledged %}<form method="post" action="{{ url_for('trader.acknowledge_alert', alert_id=a.alert_id) }}"><button type="submit">Acknowledge</button></form>{% endif %}</td></tr>
+{% else %}<tr><td colspan="7">No alerts found.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

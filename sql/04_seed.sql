@@ -1,0 +1,3 @@
+-- Your RISK_RULE rows already exist. Do not insert duplicates.
+-- Add demo users, traders, portfolios, or stocks only after checking what already exists.
+-- Never put real passwords or production user data in this file.
