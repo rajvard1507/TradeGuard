@@ -3,15 +3,20 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 from config import DATABASE_URL
 
+
 @contextmanager
 def get_cursor():
-    conn = psycopg2.connect(DATABASE_URL, sslmode="require")
+    connection = psycopg2.connect(DATABASE_URL)
+
     try:
-        with conn.cursor(cursor_factory=RealDictCursor) as cur:
-            yield cur
-        conn.commit()
+        with connection.cursor(cursor_factory=RealDictCursor) as cursor:
+            yield cursor
+
+        connection.commit()
+
     except Exception:
-        conn.rollback()
+        connection.rollback()
         raise
+
     finally:
-        conn.close()
+        connection.close()
