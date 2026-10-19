@@ -1,14 +1,220 @@
 {% extends "base.html" %}
+
 {% block content %}
 <section class="panel">
-<h2>Place a trade</h2>
-<form method="post">
-<label>Stock<select name="stock_id" required>{% for s in stocks %}<option value="{{ s.stock_id }}">{{ s.ticker_symbol }} — {{ s.company_name }} ({{ s.current_price }})</option>{% endfor %}</select></label>
-<label>Trade type<select name="trade_type"><option value="BUY">BUY</option><option value="SELL">SELL</option></select></label>
-<label>Quantity<input type="number" name="quantity" min="1" step="1" required></label>
-<label>Leverage ratio<input type="number" name="leverage_ratio" min="1" step="0.1" value="1" required></label>
-<button type="submit">Submit trade</button>
-</form>
-<p>The database validates the trade and creates risk alerts. This demo does not block a trade solely because a behavioral alert fires.</p>
+    <h2>Place a trade</h2>
+
+    <form method="post" id="trade-form">
+        <label>
+            Stock
+            <select name="stock_id" id="stock_id" required>
+                {% for s in stocks %}
+                <option value="{{ s.stock_id }}" data-price="{{ s.current_price }}">
+                    {{ s.ticker_symbol }} — {{ s.company_name }} ({{ s.current_price }})
+                </option>
+                {% endfor %}
+            </select>
+        </label>
+
+        <label>
+            Trade type
+            <select name="trade_type" id="trade_type" required>
+                <option value="BUY">BUY</option>
+                <option value="SELL">SELL</option>
+            </select>
+        </label>
+
+        <label>
+            Quantity
+            <input type="number" name="quantity" id="quantity" min="1" step="1" required>
+        </label>
+
+        <label>
+            Leverage ratio
+            <input type="number" name="leverage_ratio" id="leverage_ratio"
+                   min="1" step="0.1" value="1" required>
+        </label>
+
+        <div id="risk-panel" class="risk-panel" aria-live="polite">
+            <p>Enter your trade details to check for risks.</p>
+        </div>
+
+        <button type="submit" id="submit-trade" disabled>
+            Submit trade
+        </button>
+    </form>
 </section>
+
+<div id="confirm-modal" class="modal" hidden>
+    <div class="modal-content">
+        <h2>TradeGuard Risk Warning</h2>
+        <div id="modal-warnings"></div>
+        <p>Do you want to proceed with this trade?</p>
+
+        <div class="modal-actions">
+            <button type="button" id="cancel-trade" class="secondary-button">
+                Cancel trade
+            </button>
+            <button type="button" id="confirm-trade">
+                Proceed anyway
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+const form = document.getElementById("trade-form");
+const stockInput = document.getElementById("stock_id");
+const typeInput = document.getElementById("trade_type");
+const quantityInput = document.getElementById("quantity");
+const leverageInput = document.getElementById("leverage_ratio");
+const riskPanel = document.getElementById("risk-panel");
+const submitButton = document.getElementById("submit-trade");
+const modal = document.getElementById("confirm-modal");
+const modalWarnings = document.getElementById("modal-warnings");
+
+let currentWarnings = [];
+let currentErrors = [];
+let checkTimer;
+let checkVersion = 0;
+let checking = false;
+let approved = false;
+
+function renderResults() {
+    riskPanel.replaceChildren();
+
+    if (checking) {
+        riskPanel.textContent = "Checking trade...";
+        submitButton.disabled = true;
+        return;
+    }
+
+    if (currentErrors.length) {
+        const heading = document.createElement("h3");
+        heading.textContent = "Cannot submit this trade";
+        riskPanel.appendChild(heading);
+
+        currentErrors.forEach(message => {
+            const p = document.createElement("p");
+            p.className = "risk-error";
+            p.textContent = message;
+            riskPanel.appendChild(p);
+        });
+
+        submitButton.disabled = true;
+        return;
+    }
+
+    if (currentWarnings.length) {
+        const heading = document.createElement("h3");
+        heading.textContent = "Risk warning";
+        riskPanel.appendChild(heading);
+
+        currentWarnings.forEach(warning => {
+            const p = document.createElement("p");
+            p.className = "risk-warning";
+            p.textContent = warning.message;
+            riskPanel.appendChild(p);
+        });
+
+        submitButton.disabled = false;
+        return;
+    }
+
+    riskPanel.textContent = "No configured risks detected in this preliminary check.";
+    submitButton.disabled = false;
+}
+
+async function checkTrade() {
+    clearTimeout(checkTimer);
+    const version = ++checkVersion;
+    approved = false;
+
+    const quantity = Number(quantityInput.value);
+    const leverage = Number(leverageInput.value);
+
+    if (!stockInput.value || !Number.isInteger(quantity) || quantity <= 0 ||
+        !Number.isFinite(leverage) || leverage < 1) {
+        checking = false;
+        currentWarnings = [];
+        currentErrors = ["Enter a valid quantity and leverage ratio."];
+        renderResults();
+        return;
+    }
+
+    checking = true;
+    renderResults();
+
+    try {
+        const response = await fetch("{{ url_for('trader.check_trade') }}", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                stock_id: stockInput.value,
+                trade_type: typeInput.value,
+                quantity: quantity,
+                leverage_ratio: leverage
+            })
+        });
+
+        const result = await response.json();
+
+        if (version !== checkVersion) return;
+
+        currentErrors = result.errors || [];
+        currentWarnings = result.warnings || [];
+    } catch (error) {
+        currentErrors = ["Unable to check this trade. Check your connection and try again."];
+        currentWarnings = [];
+    }
+
+    if (version !== checkVersion) return;
+
+    checking = false;
+    renderResults();
+}
+
+function scheduleCheck() {
+    clearTimeout(checkTimer);
+    checkTimer = setTimeout(checkTrade, 250);
+}
+
+[stockInput, typeInput, quantityInput, leverageInput].forEach(input => {
+    input.addEventListener("input", scheduleCheck);
+    input.addEventListener("change", scheduleCheck);
+});
+
+form.addEventListener("submit", event => {
+    if (checking || currentErrors.length) {
+        event.preventDefault();
+        return;
+    }
+
+    if (currentWarnings.length && !approved) {
+        event.preventDefault();
+        modalWarnings.replaceChildren();
+
+        currentWarnings.forEach(warning => {
+            const p = document.createElement("p");
+            p.className = "risk-warning";
+            p.textContent = warning.message;
+            modalWarnings.appendChild(p);
+        });
+
+        modal.hidden = false;
+    }
+});
+
+document.getElementById("cancel-trade").addEventListener("click", () => {
+    modal.hidden = true;
+});
+
+document.getElementById("confirm-trade").addEventListener("click", () => {
+    approved = true;
+    modal.hidden = true;
+    form.requestSubmit();
+});
+
+checkTrade();
+</script>
 {% endblock %}

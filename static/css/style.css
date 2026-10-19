@@ -18,3 +18,62 @@ th { background: #111827; }
 .flash.ok { border-color: #22c55e; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
 .cards strong { display: block; font-size: 1.5rem; margin-top: .5rem; }
+
+.risk-panel {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background: #111827;
+}
+
+.risk-warning {
+    padding: 0.7rem;
+    border-left: 4px solid #f59e0b;
+    background: #292315;
+    color: #fde68a;
+}
+
+.risk-error {
+    padding: 0.7rem;
+    border-left: 4px solid #ef4444;
+    background: #351b20;
+    color: #fecaca;
+}
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 520px;
+    padding: 1.5rem;
+    border: 1px solid #4b5563;
+    border-radius: 12px;
+    background: #1f2937;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    background: #374151;
+}
