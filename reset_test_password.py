@@ -1,8 +1,8 @@
 from werkzeug.security import generate_password_hash
 from db import get_cursor
 
-email = "user1@example.com"
-password = "TradeGuard123!"
+email = "user2@example.com"
+password = "1234"
 
 with get_cursor() as cursor:
     cursor.execute(

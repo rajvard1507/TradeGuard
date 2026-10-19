@@ -234,7 +234,7 @@ BEGIN
             )
         VALUES
             (
-                'ALT-' || gen_random_uuid()::TEXT,
+                'AL' || UPPER(SUBSTR(REPLACE(gen_random_uuid()::TEXT, '-', ''), 1, 8)),
                 NEW.trade_id,
                 r.rule_id,
                 r.pattern_type,
@@ -311,7 +311,7 @@ BEGIN
             )
         VALUES
             (
-                'ALT-' || gen_random_uuid()::TEXT,
+                'AL' || UPPER(SUBSTR(REPLACE(gen_random_uuid()::TEXT, '-', ''), 1, 8)),
                 NEW.trade_id,
                 r.rule_id,
                 r.pattern_type,

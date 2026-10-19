@@ -37,7 +37,7 @@ def review(alert_id):
                              notes=EXCLUDED.notes,
                              action_taken=EXCLUDED.action_taken,
                              reviewed_at=EXCLUDED.reviewed_at''',
-                        ("REV-" + __import__("uuid").uuid4().hex, session["admin_id"], alert_id, notes, action_taken))
+                        ("R" + __import__("uuid").uuid4().hex[:9].upper(), session["admin_id"], alert_id, notes, action_taken))
         flash("Review saved.", "ok")
         return redirect(url_for("admin.queue"))
     with get_cursor() as cur:

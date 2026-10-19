@@ -88,9 +88,9 @@ def register():
             return render_template("register.html")
 
         password_hash = generate_password_hash(password)
-        user_id = "USR-" + uuid.uuid4().hex
-        trader_id = "TRD-" + uuid.uuid4().hex
-        portfolio_id = "PFL-" + uuid.uuid4().hex
+        user_id = "U" + uuid.uuid4().hex[:9].upper()
+        trader_id = "T" + uuid.uuid4().hex[:9].upper()
+        portfolio_id = "P" + uuid.uuid4().hex[:9].upper()
 
         with get_cursor() as cursor:
             cursor.execute(

@@ -42,7 +42,14 @@ def place_trade():
             if not stock:
                 flash("Select a valid stock.", "error")
                 return redirect(url_for("trader.place_trade"))
-            trade_id = "TRD-" + __import__("uuid").uuid4().hex
+            trade_id = "T" + __import__("uuid").uuid4().hex[:9].upper()
+            print("TRADE INSERT VALUES:")
+            print("trade_id:", trade_id, len(trade_id))
+            print("trader_id:", session["trader_id"], len(session["trader_id"]))
+            print("stock_id:", stock_id, len(stock_id))
+            print("trade_type:", trade_type, len(trade_type))
+            print("quantity:", quantity)
+            print("leverage_ratio:", leverage)
             cur.execute('''INSERT INTO "TRADE"
                 (trade_id, trader_id, stock_id, trade_type, quantity, price_per_share,
                  leverage_ratio, trade_timestamp, status)
@@ -55,7 +62,9 @@ def place_trade():
                 flash(f'[{alert["severity"]}] {alert["message"]}', "warning")
             flash("Trade recorded.", "ok")
         except (ValueError, psycopg2.Error) as exc:
-            flash(getattr(getattr(exc, "diag", None), "message_primary", None) or "Trade could not be recorded. Check the trade details and database messages.", "error")
+            import traceback
+            traceback.print_exc()
+            raise
     return redirect(url_for("trader.dashboard"))
 
 @bp.get("/alerts")
