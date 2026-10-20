@@ -1,14 +1,80 @@
 {% extends "base.html" %}
+
+{% block title %}Dashboard | TradeGuard{% endblock %}
+
 {% block content %}
-<h2>Trader dashboard</h2>
-{% if portfolio %}
-<div class="cards">
-<div class="panel"><span>Cash balance</span><strong>{{ "%.2f"|format(portfolio.cash_balance) }}</strong></div>
-<div class="panel"><span>Portfolio value</span><strong>{{ "%.2f"|format(portfolio.total_value) }}</strong></div>
+
+<div class="page-heading">
+    <div>
+        <div class="eyebrow">OVERVIEW</div>
+        <h1>Trader Dashboard</h1>
+        <p>Monitor your portfolio and keep track of your investments.</p>
+    </div>
+
+    <a class="button" href="{{ url_for('trader.place_trade') }}">
+        + Place Trade
+    </a>
 </div>
-<h3>Holdings</h3>
-<table><thead><tr><th>Stock</th><th>Quantity</th><th>Average buy price</th><th>Current price</th><th>Market value</th></tr></thead><tbody>
-{% for h in holdings %}<tr><td>{{ h.ticker_symbol }}</td><td>{{ h.quantity }}</td><td>{{ h.avg_buy_price }}</td><td>{{ h.current_price }}</td><td>{{ h.market_value }}</td></tr>{% else %}<tr><td colspan="5">No holdings yet.</td></tr>{% endfor %}
-</tbody></table>
-{% else %}<p>No portfolio is linked to this account.</p>{% endif %}
+
+{% if portfolio %}
+
+<div class="cards">
+    <section class="panel">
+        <span>Available Cash Balance</span>
+        <strong>{{ "%.2f"|format(portfolio.cash_balance) }}</strong>
+        <p>Funds available in your portfolio</p>
+    </section>
+
+    <section class="panel">
+        <span>Total Portfolio Value</span>
+        <strong>{{ "%.2f"|format(portfolio.total_value) }}</strong>
+        <p>Current reported portfolio value</p>
+    </section>
+</div>
+
+<div class="section-heading">
+    <div>
+        <h2>Portfolio Holdings</h2>
+        <p>Review your current stock positions.</p>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Average Buy Price</th>
+            <th>Current Price</th>
+            <th>Market Value</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for h in holdings %}
+        <tr>
+            <td><strong>{{ h.ticker_symbol }}</strong></td>
+            <td>{{ h.quantity }}</td>
+            <td>{{ h.avg_buy_price }}</td>
+            <td>{{ h.current_price }}</td>
+            <td><strong>{{ h.market_value }}</strong></td>
+        </tr>
+
+        {% else %}
+        <tr>
+            <td colspan="5">No holdings yet. Place your first trade to get started.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+
+<section class="panel">
+    <h2>No portfolio available</h2>
+    <p>No portfolio is currently linked to this account.</p>
+</section>
+
+{% endif %}
+
 {% endblock %}

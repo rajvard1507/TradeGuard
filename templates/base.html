@@ -1,24 +1,115 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TradeGuard</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}TradeGuard{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-<header><h1>TradeGuard</h1>
-  {% if session.get('role') == 'trader' %}
-  <nav><a href="{{ url_for('trader.dashboard') }}">Dashboard</a><a href="{{ url_for('trader.place_trade') }}">Place trade</a><a href="{{ url_for('trader.alerts') }}">Alerts</a><a href="{{ url_for('auth.logout') }}">Logout</a></nav>
-  {% elif session.get('role') == 'admin' %}
-  <nav><a href="{{ url_for('admin.queue') }}">Alert queue</a><a href="{{ url_for('auth.logout') }}">Logout</a></nav>
-  {% endif %}
-</header>
-<main>
-  {% for category, message in get_flashed_messages(with_categories=true) %}
-    <div class="flash {{ category }}">{{ message }}</div>
-  {% endfor %}
-  {% block content %}{% endblock %}
-</main>
+    {% set role = session.get('role') %}
+
+    <div class="app-shell">
+        {% if role %}
+        <aside class="sidebar">
+            <a class="brand" href="{{ url_for('trader.dashboard') if role == 'trader' else url_for('admin.queue') }}">
+                <span class="brand-mark">T</span>
+                <span>
+                    <strong>TradeGuard</strong>
+                    <small>Trading Intelligence</small>
+                </span>
+            </a>
+
+            <div class="sidebar-label">WORKSPACE</div>
+
+            <nav class="sidebar-nav">
+                {% if role == 'trader' %}
+                    <a class="nav-link {% if request.endpoint == 'trader.dashboard' %}active{% endif %}"
+                       href="{{ url_for('trader.dashboard') }}">
+                        <span class="nav-icon">▦</span>
+                        Dashboard
+                    </a>
+
+                    <a class="nav-link {% if request.endpoint == 'trader.place_trade' %}active{% endif %}"
+                       href="{{ url_for('trader.place_trade') }}">
+                        <span class="nav-icon">↗</span>
+                        Place Trade
+                    </a>
+
+                    <a class="nav-link {% if request.endpoint in ['trader.alerts', 'trader.acknowledge_alert'] %}active{% endif %}"
+                       href="{{ url_for('trader.alerts') }}">
+                        <span class="nav-icon">◇</span>
+                        Risk Alerts
+                    </a>
+
+                {% elif role == 'admin' %}
+                    <a class="nav-link {% if request.endpoint in ['admin.queue', 'admin.review'] %}active{% endif %}"
+                       href="{{ url_for('admin.queue') }}">
+                        <span class="nav-icon">▤</span>
+                        Alert Queue
+                    </a>
+                {% endif %}
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="security-note">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>Risk Monitoring</strong>
+                        <small>Database-driven alerts</small>
+                    </div>
+                </div>
+
+                <a class="nav-link logout-link" href="{{ url_for('auth.logout') }}">
+                    <span class="nav-icon">↪</span>
+                    Sign Out
+                </a>
+            </div>
+        </aside>
+        {% endif %}
+
+        <div class="main-shell">
+            <header class="topbar">
+                <div>
+                    <div class="topbar-eyebrow">TRADEGUARD PLATFORM</div>
+                    <div class="topbar-title">
+                        {% if role == 'trader' %}
+                            Trader Workspace
+                        {% elif role == 'admin' %}
+                            Administration
+                        {% else %}
+                            Welcome to TradeGuard
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if role %}
+                <div class="topbar-right">
+                    <span class="system-status">
+                        <span class="status-dot"></span>
+                        Monitoring Active
+                    </span>
+
+                    <div class="profile-badge">
+                        {{ 'T' if role == 'trader' else 'A' }}
+                    </div>
+                </div>
+                {% endif %}
+            </header>
+
+            <main class="page-content">
+                {% for category, message in get_flashed_messages(with_categories=true) %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+
+                {% block content %}{% endblock %}
+            </main>
+
+            <footer class="app-footer">
+                <span>TradeGuard</span>
+                <span>Behavioral Risk Monitoring</span>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>
