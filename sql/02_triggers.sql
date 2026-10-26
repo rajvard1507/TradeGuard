@@ -241,8 +241,8 @@ BEGIN
                 'MEDIUM',
                 format(
                     'Leverage ratio %s exceeds the limit of %s.',
-                    NEW.leverage_ratio,
-                    r.threshold_value
+                    to_char(NEW.leverage_ratio, 'FM990.00'),
+                    to_char(r.threshold_value, 'FM990.00')
                 ),
                 CURRENT_TIMESTAMP,
                 FALSE
@@ -317,10 +317,10 @@ BEGIN
                 r.pattern_type,
                 'MEDIUM',
                 format(
-                    'Stock concentration is %.2f%%; limit is %s%%.',
-                    v_percentage,
-                    r.threshold_value
-                ),
+                    'Stock concentration is %s%%; limit is %s%%.',
+    to_char(v_percentage, 'FM990.00'),
+    to_char(r.threshold_value, 'FM990.00')
+),
                 CURRENT_TIMESTAMP,
                 FALSE
             );
